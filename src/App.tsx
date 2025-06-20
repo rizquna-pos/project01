@@ -22,6 +22,7 @@ import LocationManagement from './pages/admin/LocationManagement';
 import ReportsManagement from './pages/admin/ReportsManagement';
 import ModerationHistory from './pages/admin/ModerationHistory';
 import Analytics from './pages/admin/Analytics';
+import Settings from './pages/admin/Settings';
 import UnauthorizedPage from './pages/admin/UnauthorizedPage';
 
 function App() {
@@ -57,7 +58,7 @@ function App() {
               <Route path="reports" element={<ReportsManagement />} />
               <Route path="moderation-history" element={<ModerationHistory />} />
               <Route path="analytics" element={<Analytics />} />
-              <Route path="settings" element={<div>Settings - Coming Soon</div>} />
+              <Route path="settings" element={<Settings />} />
             </Route>
           </Routes>
         </Router>
