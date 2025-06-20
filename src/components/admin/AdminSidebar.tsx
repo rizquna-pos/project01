@@ -10,7 +10,9 @@ import {
   Settings,
   X,
   Shield,
-  Tags
+  Tags,
+  AlertTriangle,
+  History
 } from 'lucide-react';
 
 interface AdminSidebarProps {
@@ -28,6 +30,7 @@ const AdminSidebar: React.FC<AdminSidebarProps> = ({ isOpen, onClose }) => {
     { icon: Tags, label: 'Kategori', path: '/admin/categories' },
     { icon: MapPin, label: 'Lokasi', path: '/admin/locations' },
     { icon: Flag, label: 'Laporan', path: '/admin/reports' },
+    { icon: History, label: 'Riwayat Moderasi', path: '/admin/moderation-history' },
     { icon: BarChart3, label: 'Analitik', path: '/admin/analytics' },
     { icon: Settings, label: 'Pengaturan', path: '/admin/settings' },
   ];

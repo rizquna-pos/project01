@@ -19,6 +19,9 @@ import UserManagement from './pages/admin/UserManagement';
 import PropertyManagement from './pages/admin/PropertyManagement';
 import CategoryManagement from './pages/admin/CategoryManagement';
 import LocationManagement from './pages/admin/LocationManagement';
+import ReportsManagement from './pages/admin/ReportsManagement';
+import ModerationHistory from './pages/admin/ModerationHistory';
+import Analytics from './pages/admin/Analytics';
 import UnauthorizedPage from './pages/admin/UnauthorizedPage';
 
 function App() {
@@ -51,8 +54,9 @@ function App() {
               <Route path="properties" element={<PropertyManagement />} />
               <Route path="categories" element={<CategoryManagement />} />
               <Route path="locations" element={<LocationManagement />} />
-              <Route path="reports" element={<div>Reports Management - Coming Soon</div>} />
-              <Route path="analytics" element={<div>Analytics - Coming Soon</div>} />
+              <Route path="reports" element={<ReportsManagement />} />
+              <Route path="moderation-history" element={<ModerationHistory />} />
+              <Route path="analytics" element={<Analytics />} />
               <Route path="settings" element={<div>Settings - Coming Soon</div>} />
             </Route>
           </Routes>
