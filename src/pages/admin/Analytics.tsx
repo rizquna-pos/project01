@@ -260,7 +260,7 @@ const Analytics: React.FC = () => {
           title="Registrasi Pengguna (14 Hari Terakhir)"
           height={300}
           color="#10B981"
-          formatValue={(value) => value.toLocaleString()}
+          formatValue={(value) => (value !== undefined && value !== null ? value.toLocaleString() : 'N/A')}
         />
       </div>
 
@@ -370,6 +370,7 @@ const Analytics: React.FC = () => {
           title="Views Harian (14 Hari Terakhir)"
           height={250}
           color="#3B82F6"
+          formatValue={(value) => (value !== undefined && value !== null ? value.toLocaleString() : 'N/A')}
         />
         
         <LineChart
@@ -380,6 +381,7 @@ const Analytics: React.FC = () => {
           title="Inquiries Harian (14 Hari Terakhir)"
           height={250}
           color="#10B981"
+          formatValue={(value) => (value !== undefined && value !== null ? value.toLocaleString() : 'N/A')}
         />
       </div>
     </div>
