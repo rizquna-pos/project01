@@ -25,7 +25,12 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   }
 
   if (!isAuthenticated) {
-    return <Navigate to="/admin/login" state={{ from: location }} replace />;
+    // For admin routes, redirect to admin login
+    if (requireAdmin || requireSuperAdmin) {
+      return <Navigate to="/admin/login" state={{ from: location }} replace />;
+    }
+    // For user dashboard routes, redirect to regular login
+    return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
   if (requireSuperAdmin && !isSuperAdmin()) {

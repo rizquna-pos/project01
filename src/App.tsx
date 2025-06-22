@@ -15,6 +15,13 @@ import PremiumUpgradePage from './pages/PremiumUpgradePage';
 import PremiumDashboardPage from './pages/PremiumDashboardPage';
 import PremiumFeaturesPage from './pages/PremiumFeaturesPage';
 
+// User Dashboard Pages
+import DashboardLayout from './components/dashboard/DashboardLayout';
+import DashboardOverview from './pages/dashboard/DashboardOverview';
+import MyListings from './pages/dashboard/MyListings';
+import AddEditListing from './pages/dashboard/AddEditListing';
+import ProfileSettings from './pages/dashboard/ProfileSettings';
+
 // Admin Components
 import ProtectedRoute from './components/admin/ProtectedRoute';
 import AdminLayout from './components/admin/AdminLayout';
@@ -50,7 +57,20 @@ function App() {
             {/* Premium Routes */}
             <Route path="/premium/upgrade" element={<PremiumUpgradePage />} />
             <Route path="/premium/features" element={<PremiumFeaturesPage />} />
-            <Route path="/dashboard/premium" element={<PremiumDashboardPage />} />
+
+            {/* User Dashboard Routes */}
+            <Route path="/dashboard" element={
+              <ProtectedRoute>
+                <DashboardLayout />
+              </ProtectedRoute>
+            }>
+              <Route index element={<DashboardOverview />} />
+              <Route path="listings" element={<MyListings />} />
+              <Route path="listings/new" element={<AddEditListing />} />
+              <Route path="listings/edit/:id" element={<AddEditListing />} />
+              <Route path="profile" element={<ProfileSettings />} />
+              <Route path="premium" element={<PremiumDashboardPage />} />
+            </Route>
 
             {/* Admin Routes */}
             <Route path="/admin/login" element={<AdminLoginPage />} />
